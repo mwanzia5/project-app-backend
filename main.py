@@ -1,6 +1,8 @@
 from fastapi import FastAPI
+from display import Cakedisplay
 
 app = FastAPI()
+
 
 @app.get("/")
 
@@ -17,7 +19,8 @@ def cakes():
      return[]
 #create an event
 @app.post("/cakes")
-def create_cake():
+def create_cake(cake: Cakedisplay):
+     print(cake)
      return {"message":"Data recieved"}
 #update an event
 @app.patch('/cakes/{cake_id}')
