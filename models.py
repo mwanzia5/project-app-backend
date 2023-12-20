@@ -1,14 +1,18 @@
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column,Text,VARCHAR,Integer,TIMESTAMP
-base = declarative_base()
+from sqlalchemy import Column,Text,VARCHAR,Integer,DateTime,TIMESTAMP
 
-class Cake(base):
-    __tablename__ ="events"
+Base = declarative_base()
 
-id = Column(Integer(),primary_key=True)
-type = Column(Text())
-description =Column(VARCHAR)
-image = Column(VARCHAR)
-size =Column(Integer())
-price = Column(Integer())
-date = Column(TIMESTAMP)
+class Cake(Base):
+    __tablename__ = "cakes"
+
+    id = Column(Integer, primary_key=True)
+    type = Column(Text(),nullable=False)
+    description = Column(VARCHAR,nullable=False)
+    image = Column(VARCHAR,nullable=False)
+    size = Column(Integer,nullable=False)
+    price = Column(Integer,nullable=False)
+    date = Column(DateTime,nullable=False)
+    created_at = Column(TIMESTAMP)
+
+
