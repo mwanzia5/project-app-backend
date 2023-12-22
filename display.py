@@ -7,3 +7,13 @@ class Cakedisplay(BaseModel):
     size:int
     price:int
     date:str
+
+class Userdisplay(BaseModel):
+    name: str
+    phone: str
+
+class Bookingdisplay(BaseModel):
+    cake_id: int
+    name: str
+    phone: str
+    booking_date: str
